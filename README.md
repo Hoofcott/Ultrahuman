@@ -19,6 +19,14 @@ This integration uses the official Ultrahuman Vision API to retrieve Ultrahuman 
 7. Click Generate Token
 8. Copy token as this will be required during integration onboarding
 
+## Sensors (fork Hoofcott, v1.2.0)
+Cardio: Heart Rate, Night Resting HR, HRV (sleep average), HRV Day Average, Sleep RHR, SpO2, VO2 Max.
+Sleep: Sleep Score (contributors as attributes), Total Sleep, Time in Bed, Sleep Start/End, Deep / REM / Light sleep, Awake Time, Sleep Efficiency, Restorative Sleep, Full Sleep Cycles, Tosses and Turns, Sleep Movements, Morning Alertness.
+Activity: Recovery Index, Movement Index, Active Minutes, Weekly Active Minutes, Inactive Time, Steps.
+Temperature: Skin Temperature (last sample), Sleep Body Temperature, Temperature Deviation (vs baseline).
+
+Changes vs upstream: SpO2/HR/HRV report `unknown` instead of `0` when the API has no measurement, steps are integers, skin temperature keeps its decimals.
+
 ## Notes:
 1. This integration only shows data  present on Ultrahuman's servers. Therefore the ring must sync with the mobile app for the latest data.
 2. The integration fetches data periodically from Ultrahuman's servers.

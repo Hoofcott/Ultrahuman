@@ -98,3 +98,9 @@ class UltrahumanSensor(CoordinatorEntity, SensorEntity):
                 return None
 
         return value
+
+    @property
+    def extra_state_attributes(self):
+        if not self.coordinator.data:
+            return None
+        return UltrahumanDataParser(self.coordinator.data).get_attributes(self._metric.key)
